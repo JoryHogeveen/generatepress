@@ -74,8 +74,8 @@ const getRangeProps = ( settings, property, type, fallback ) => {
 	return rangeProps;
 };
 
-const selectorHasMarginBottom = ( selector ) => {
-	return [ 'body', 'all-headings', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'widget-titles' ].includes( selector );
+const selectorHasMargin = ( selector ) => {
+	return [ 'body', 'all-headings', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'widget-titles', 'custom' ].includes( selector );
 };
 
 const getElementGroups = () => {
@@ -180,7 +180,7 @@ export {
 	getElementLabel,
 	getPlaceholder,
 	getRangeProps,
-	selectorHasMarginBottom,
+	selectorHasMargin,
 	getElementOptions,
 	getFontFamilies,
 	getAvailableFonts,

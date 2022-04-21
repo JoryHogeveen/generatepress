@@ -3,7 +3,7 @@ import { useState, useEffect } from '@wordpress/element';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import TypographyList from './TypographyList';
-import { getElements, selectorHasMarginBottom } from './utils';
+import { getElements, selectorHasMargin } from './utils';
 
 const GeneratePressTypographyControlForm = ( props ) => {
 	const propValues = props.value;
@@ -72,9 +72,13 @@ const GeneratePressTypographyControlForm = ( props ) => {
 		}
 
 		// Unset any margin values if margin isn't supported.
-		if ( ! selectorHasMarginBottom( value ) ) {
+		if ( ! selectorHasMargin( value ) ) {
 			fontValues[ index ] = {
 				...fontValues[ index ],
+				marginTop: '',
+				marginTopTablet: '',
+				marginTopMobile: '',
+				marginTopUnit: '',
 				marginBottom: '',
 				marginBottomTablet: '',
 				marginBottomMobile: '',

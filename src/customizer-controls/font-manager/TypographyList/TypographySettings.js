@@ -7,8 +7,9 @@ import TextTransform from './TypographySettings/TextTransform';
 import FontSize from './TypographySettings/FontSize';
 import LineHeight from './TypographySettings/LineHeight';
 import LetterSpacing from './TypographySettings/LetterSpacing';
+import MarginTop from './TypographySettings/MarginTop';
 import MarginBottom from './TypographySettings/MarginBottom';
-import { selectorHasMarginBottom } from '../utils';
+import { selectorHasMargin } from '../utils';
 import { __ } from '@wordpress/i18n';
 
 const TypographySettings = ( props ) => {
@@ -62,8 +63,11 @@ const TypographySettings = ( props ) => {
 					<LineHeight font={ font } onChange={ onChangeFontValue } />
 					<LetterSpacing font={ font } onChange={ onChangeFontValue } />
 
-					{ selectorHasMarginBottom( font.selector ) &&
-						<MarginBottom font={ font } onChange={ onChangeFontValue } />
+					{ selectorHasMargin( font.selector ) &&
+					    <>
+						    <MarginTop font={ font } onChange={ onChangeFontValue } />
+						    <MarginBottom font={ font } onChange={ onChangeFontValue } />
+					    </>
 					}
 				</>
 			}
